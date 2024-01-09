@@ -1,0 +1,21 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = "postgres://admin:foN7UXoTMujWG9KQSj5bFoEgw555SpVJ@dpg-cmenr6en7f5s73fv0dj0-a.oregon-postgres.render.com/grocerydb_cobe"
+}
+
+model Item {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  category    String
+  price       Float
+  quantity    Int
+  timestamp   DateTime @default(now())
+}
